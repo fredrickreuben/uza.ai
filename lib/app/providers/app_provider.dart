@@ -1,5 +1,5 @@
-import 'package:flutter_app/config/design.dart';
-import 'package:flutter_app/config/theme.dart';
+import 'package:uza/config/design.dart';
+import 'package:uza/config/theme.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import '../../config/localization.dart';
 

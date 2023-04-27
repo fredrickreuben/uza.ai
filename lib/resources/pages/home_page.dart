@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/extensions.dart';
-import 'package:flutter_app/resources/widgets/logo_widget.dart';
+import 'package:uza/bootstrap/extensions.dart';
+import 'package:uza/resources/widgets/logo_widget.dart';
 import '/app/controllers/home_controller.dart';
 import '/bootstrap/helpers.dart';
 import '/resources/widgets/safearea_widget.dart';
@@ -23,7 +23,6 @@ class _HomePageState extends NyState<HomePage> {
   @override
   init() async {
     super.init();
-
   }
 
   @override
@@ -43,15 +42,12 @@ class _HomePageState extends NyState<HomePage> {
               Text(
                 getEnv("APP_NAME"),
               ).displayMedium(context),
-              Text(
-                "Micro-framework for Flutter",
-                textAlign: TextAlign.center
-              ).titleMedium(context)
+              Text("Micro-framework for Flutter", textAlign: TextAlign.center)
+                  .titleMedium(context)
                   .setColor(context, (color) => color.primaryAccent),
               Text(
                 "Build something amazing 💡️",
-              ).medium(context)
-                  .alignCenter(),
+              ).medium(context).alignCenter(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -79,8 +75,8 @@ class _HomePageState extends NyState<HomePage> {
                         MaterialButton(
                           child: Text(
                             "documentation".tr().capitalize(),
-                          ).large(context)
-                              .setColor(context, (color) => color.surfaceContent),
+                          ).large(context).setColor(
+                              context, (color) => color.surfaceContent),
                           onPressed: widget.controller.onTapDocumentation,
                         ),
                         Divider(
@@ -89,8 +85,7 @@ class _HomePageState extends NyState<HomePage> {
                         MaterialButton(
                           child: Text(
                             "GitHub",
-                          ).large(context)
-                              .setColor(
+                          ).large(context).setColor(
                               context, (color) => color.surfaceContent),
                           onPressed: widget.controller.onTapGithub,
                         ),
@@ -100,8 +95,7 @@ class _HomePageState extends NyState<HomePage> {
                         MaterialButton(
                           child: Text(
                             "changelog".tr().capitalize(),
-                          ).large(context)
-                              .setColor(
+                          ).large(context).setColor(
                               context, (color) => color.surfaceContent),
                           onPressed: widget.controller.onTapChangeLog,
                         ),
@@ -110,14 +104,15 @@ class _HomePageState extends NyState<HomePage> {
                   ),
                   Text(
                     "Framework Version: $nyloVersion",
-                  ).medium(context)
-                      .setColor(context, (color) => Colors.grey),
+                  ).medium(context).setColor(context, (color) => Colors.grey),
                   Switch(
                       value: _darkMode,
                       onChanged: (value) {
                         _darkMode = value;
                         NyTheme.set(context,
-                            id: getEnv(_darkMode == true ? 'DARK_THEME_ID' : 'LIGHT_THEME_ID'));
+                            id: getEnv(_darkMode == true
+                                ? 'DARK_THEME_ID'
+                                : 'LIGHT_THEME_ID'));
                         setState(() {});
                       }),
                   Text("${_darkMode == true ? "Dark" : "Light"} Mode"),

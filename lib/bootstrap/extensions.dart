@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/themes/styles/color_styles.dart';
+import 'package:uza/bootstrap/helpers.dart';
+import 'package:uza/resources/themes/styles/color_styles.dart';
 
 extension NyText on Text {
   /// Set the Style to use [displayLarge].
@@ -78,8 +78,11 @@ extension NyText on Text {
 
   /// Sets the color from your [ColorStyles] or [Color].
   Text setColor(
-      BuildContext context, Color Function(ColorStyles color) newColor, {String? themeId}) {
-    return copyWith(style: TextStyle(color: newColor(ThemeColor.get(context, themeId: themeId))));
+      BuildContext context, Color Function(ColorStyles color) newColor,
+      {String? themeId}) {
+    return copyWith(
+        style: TextStyle(
+            color: newColor(ThemeColor.get(context, themeId: themeId))));
   }
 
   /// Aligns text to the left.
@@ -109,17 +112,17 @@ extension NyText on Text {
   /// Helper to apply changes.
   Text copyWith(
       {Key? key,
-        StrutStyle? strutStyle,
-        TextAlign? textAlign,
-        TextDirection? textDirection = TextDirection.ltr,
-        Locale? locale,
-        bool? softWrap,
-        TextOverflow? overflow,
-        double? textScaleFactor,
-        int? maxLines,
-        String? semanticsLabel,
-        TextWidthBasis? textWidthBasis,
-        TextStyle? style}) {
+      StrutStyle? strutStyle,
+      TextAlign? textAlign,
+      TextDirection? textDirection = TextDirection.ltr,
+      Locale? locale,
+      bool? softWrap,
+      TextOverflow? overflow,
+      double? textScaleFactor,
+      int? maxLines,
+      String? semanticsLabel,
+      TextWidthBasis? textWidthBasis,
+      TextStyle? style}) {
     return Text(this.data ?? "",
         key: key ?? this.key,
         strutStyle: strutStyle ?? this.strutStyle,
